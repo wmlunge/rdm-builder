@@ -19,7 +19,9 @@ on:
       - 'README.md'
       - 'LICENSE'
   schedule:
-    - cron: '0 22 * * *' # Runs at 22:00 UTC every day
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    # - cron: '0 22 * * *' # Runs at 22:00 UTC every day
+    - cron: '0 22 * * 6' # Runs at 22:00 UTC every saturday
 
 env:
   RDM_REF: 2022
@@ -46,7 +48,7 @@ jobs:
       - uses: dev-drprasad/delete-tag-and-release@v0.2.1
         with:
           delete_release: true # default: false
-          tag_name: ${{ env.RDM_REF }}-nightly # tag name to delete
+          tag_name: ${{ env.RDM_REF }}-weekly # tag name to delete
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -56,10 +58,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ env.RDM_REF }}-nightly
-          release_name: v${{ env.RDM_REF }}-nightly
+          tag_name: ${{ env.RDM_REF }}-weekly
+          release_name: v${{ env.RDM_REF }}-weekly
           body: |
-            ${{ env.RDM_REF }}-nightly
+            ${{ env.RDM_REF }}-weekly
           draft: false
           prerelease: true
 

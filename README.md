@@ -19,7 +19,7 @@ Official Download: [https://resp.app](https://resp.app)
 
 - [windows](https://github.com/FuckDoctors/rdm-builder/releases)
 - [macOS](https://github.com/FuckDoctors/rdm-builder/releases)
-- [Pre-release](https://github.com/FuckDoctors/rdm-builder/releases/tag/2021-nightly) [___Nightly___] 🎉
+- [Pre-release](https://github.com/FuckDoctors/rdm-builder/releases/tag/2022-weekly) [___Weekly___] 🎉
 
 ## Credits & 感谢
 
