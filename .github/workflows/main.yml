@@ -33,7 +33,7 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   create_release:
-    runs-on: Windows Server 2025
+    runs-on: windows-2025
     # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjobs_idoutputs
     # Map a step output to a job output
     outputs:
@@ -67,7 +67,7 @@ jobs:
 
   build_on_windows:
     needs: create_release
-    runs-on: windows-2019
+    runs-on: windows-2025
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
